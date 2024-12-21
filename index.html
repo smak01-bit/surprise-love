@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ff99cc, #ffccff);
+            color: #333;
+            display: none;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff0066;
+            text-shadow: 2px 2px 4px #ffcccc;
+        }
+
+        .heart {
+            color: #ff6666;
+            font-size: 2em;
+        }
+
+        .flowers {
+            margin: 20px 0;
+        }
+
+        .quotes {
+            font-style: italic;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        .password-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .password-box input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        .password-box button {
+            padding: 10px 20px;
+            background-color: #ff66a3;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .password-box button:hover {
+            background-color: #ff3385;
+        }
+    </style>
+</head>
+<body>
+    <div class="password-box">
+        <h2>Enter the Password to Unlock Your Surprise</h2>
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <div class="container" id="main-content">
+        <h1>Happy Birthday, My Love! <span class="heart">❤️</span></h1>
+        <div class="flowers">
+            <img src="https://via.placeholder.com/300x200.png?text=Flowers+Image" alt="Flowers">
+            <img src="https://via.placeholder.com/300x200.png?text=More+Flowers" alt="Flowers">
+        </div>
+        <div class="quotes">
+            "You are my today and all of my tomorrows."<br>
+            "Every love story is beautiful, but ours is my favorite."
+        </div>
+    </div>
+
+    <script>
+        const PASSWORD = "01010"; // Replace with her actual DOB in MMDD format
+
+        function checkPassword() {
+            const input = document.getElementById('password').value;
+            if (input === PASSWORD) {
+                document.querySelector('.password-box').style.display = 'none';
+                document.body.style.display = 'block';
+            } else {
+                alert('Incorrect password. Try again!');
+            }
+        }
+    </script>
+</body>
+</html>
